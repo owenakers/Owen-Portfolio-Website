@@ -2,3 +2,9 @@
     font-family: 'Poppins', sans-serif;   
 }
 
+.gradient-text {
+    background: linear-gradient(90deg, #2563eb, #0d9488);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
