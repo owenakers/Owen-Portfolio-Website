@@ -1,60 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Owen Akers | Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            DEFAULT: '#3B82F6',
-                            dark: '#60A5FA'
-                        },
-                        secondary: {
-                            DEFAULT: '#10B981',
-                            dark: '#34D399'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif']
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'gradient': 'gradient 8s ease infinite',
-                        'typewriter': 'typewriter 2s steps(11) forwards',
-                        'caret': 'typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s'
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        gradient: {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' }
-                        },
-                        typewriter: {
-                            'to': { width: '100%' }
-                        },
-                        blink: {
-                            'to': { 'border-right-color': 'transparent' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body class="font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
     <!-- Navigation -->
     <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
@@ -260,7 +216,6 @@
                         <a href="https://github.com/owenakers/Cyberbirds-Website.git" target="_blank" class="flex-1 text-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-6 py-2 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">View Code</a>
                     </div>
                 </div>
-
                 <!-- Project 2: Market Mentor -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
                     <a href="https://market-mentor-kappa.vercel.app/" target="_blank" class="block rounded-lg overflow-hidden mb-6 shadow-md">
@@ -291,30 +246,32 @@
 
             <!-- Additional Projects Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Lab 1: Weather Mood App -->
+                <!-- Project 1: Weather Mood App -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl shadow-lg text-center" data-aos="zoom-in">
                     <div class="w-16 h-16 bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-cloud-sun text-2xl"></i></div>
                     <h4 class="text-xl font-bold text-gray-900 dark:text-white">Weather Mood App</h4>
                     <p class="text-gray-600 dark:text-gray-300 mt-2 mb-4 text-sm">Web app that recommends Spotify playlists based on live weather data.</p>
                     <a href="https://github.com/owenakers/WeatherMoodApp.git" target="_blank" class="font-semibold text-primary dark:text-primary-dark hover:underline">View on GitHub &rarr;</a>
                 </div>
-                <!-- Lab 2: Image CLI Tool -->
+                <!-- Project 2: Image CLI Tool -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl shadow-lg text-center" data-aos="zoom-in" data-aos-delay="100">
                     <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-camera-retro text-2xl"></i></div>
                     <h4 class="text-xl font-bold text-gray-900 dark:text-white">Image CLI Tool</h4>
                     <p class="text-gray-600 dark:text-gray-300 mt-2 mb-4 text-sm">A command-line tool for basic image manipulations like blur, crop, and color inversion.</p>
                     <a href="https://github.com/jhu-ip/2025-spring-midterm-anath3-oakers1.git" target="_blank" class="font-semibold text-primary dark:text-primary-dark hover:underline">View on GitHub &rarr;</a>
                 </div>
-                <!-- Lab 3: Chess Game -->
+                <!-- Project 3: Chess Game -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl shadow-lg text-center" data-aos="zoom-in" data-aos-delay="200">
                     <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/50 text-yellow-600 dark:text-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-chess-knight text-2xl"></i></div>
                     <h4 class="text-xl font-bold text-gray-900 dark:text-white">Terminal Chess</h4>
                     <p class="text-gray-600 dark:text-gray-300 mt-2 mb-4 text-sm">A fully functional, two-player chess game that runs in the command line.</p>
                     <a href="https://github.com/jhu-ip/2025-spring-final-anath3-oakers1-alee297.git" target="_blank" class="font-semibold text-primary dark:text-primary-dark hover:underline">View on GitHub &rarr;</a>
                 </div>
+
             </div>
         </div>
     </section>
+
     <!-- Skills & Resume Section -->
     <section class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
