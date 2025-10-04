@@ -54,12 +54,14 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-    themeToggleLightIcon.classList.remove('hidden');
-} else {
+// Default to dark mode if no preference stored
+if (localStorage.getItem('color-theme') === 'light') {
     document.documentElement.classList.remove('dark');
-    themeToggleDarkIcon.classList.remove('hidden');
+    themeToggleDarkIcon.classList.remove('hidden'); // show moon
+} else {
+    document.documentElement.classList.add('dark');
+    themeToggleLightIcon.classList.remove('hidden'); // show sun
+    localStorage.setItem('color-theme', 'dark'); // ensure default
 }
 
 themeToggleBtn.addEventListener('click', function() {
@@ -74,6 +76,7 @@ themeToggleBtn.addEventListener('click', function() {
         localStorage.setItem('color-theme', 'dark');
     }
 });
+
 
 // Mobile menu toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
