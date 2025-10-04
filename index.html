@@ -53,9 +53,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section id="home" class="relative overflow-hidden bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center gap-12 py-24 md:py-32">
             
+            <!-- Text Section -->
             <div class="md:w-1/2 lg:w-5/12 text-center md:text-left" data-aos="fade-right">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white font-serif">
                     Software Engineer
@@ -86,10 +88,13 @@
                 </div>
             </div>
 
+            <!-- Image Section -->
             <div class="md:w-1/2 lg:w-1/2" data-aos="fade-left">
                 <div class="relative mx-auto w-fit">
                     <div class="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-blue-200 to-teal-200 dark:from-blue-900/50 dark:to-teal-900/50 rounded-lg transform rotate-3 transition-transform duration-500 group-hover:rotate-0"></div>
-                    <img src="pictures/owen.png" alt="Owen Akers on the tennis court" class="relative w-full max-w-sm sm:max-w-md mx-auto rounded-lg shadow-2xl transform transition-transform duration-500 hover:scale-105">
+                    
+                    <img src="pictures/owen.png" alt="Owen Akers" 
+                        class="relative w-[320px] h-auto rounded-lg shadow-2xl transform transition-transform duration-500 hover:scale-105 mx-auto object-contain">
                 </div>
             </div>
         </div>
