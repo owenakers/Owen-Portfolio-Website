@@ -1,3 +1,6 @@
+import owenImage from '/public/pictures/owen.png';
+import resumePdf from '/public/assets/owen-akers-resume.pdf';
+
 const Hero = () => {
   return (
     <section id="home" className="relative overflow-hidden bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -43,7 +46,7 @@ const Hero = () => {
               <i className="fas fa-terminal group-hover:scale-110 transition-transform"></i>
             </a>
             <a
-              href="/assets/owen-akers-resume.pdf"
+              href={resumePdf}
               download="Owen-Akers-Resume.pdf"
               className="group px-8 py-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-2 border-gray-400 dark:border-teal-500 hover:border-teal-500 dark:hover:border-teal-400 rounded font-semibold flex items-center justify-center gap-2 hover:shadow-retro transition-all duration-300 font-mono"
             >
@@ -84,7 +87,7 @@ const Hero = () => {
             <div className="absolute -top-6 -right-6 w-full h-full border-4 border-teal-500/30 dark:border-teal-400/30 rounded transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
 
             <img
-              src="/pictures/owen.png"
+              src={owenImage}
               alt="Owen Akers"
               className="relative w-[320px] h-auto rounded shadow-2xl transform transition-all duration-500 group-hover:scale-105 mx-auto object-contain ring-4 ring-blue-500 dark:ring-teal-500 border-4 border-gray-200 dark:border-gray-700"
             />

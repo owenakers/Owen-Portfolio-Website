@@ -1,3 +1,6 @@
+import cyberbirdsImage from '/public/pictures/project-screenshots/Cyber-landing.png';
+import marketMentorImage from '/public/pictures/project-screenshots/marketMentor.png';
+
 const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -27,7 +30,7 @@ const Projects = () => {
               className="block rounded overflow-hidden mb-6 shadow-md border-2 border-gray-200 dark:border-gray-700"
             >
               <img
-                src="/pictures/project-screenshots/Cyber-landing.png"
+                src={cyberbirdsImage}
                 alt="Cyberbirds Website Preview"
                 className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -84,7 +87,7 @@ const Projects = () => {
               className="block rounded overflow-hidden mb-6 shadow-md border-2 border-gray-200 dark:border-gray-700"
             >
               <img
-                src="/pictures/project-screenshots/marketMentor.png"
+                src={marketMentorImage}
                 alt="Market Mentor App Preview"
                 className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
               />
