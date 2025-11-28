@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCAI Research Lab | Owen Akers</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Apply dark mode immediately to prevent flash
+        (function() {
+            const stored = localStorage.getItem('color-theme');
+            // Default to dark mode if nothing is stored
+            const isDark = stored !== 'light';
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#3B82F6',
+                            dark: '#60A5FA'
+                        },
+                        secondary: {
+                            DEFAULT: '#10B981',
+                            dark: '#34D399'
+                        },
+                        retro: {
+                            green: '#00FF41',
+                            cyan: '#00FFFF',
+                            amber: '#FFB000',
+                            blue: '#00BFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        mono: ['Courier New', 'monospace']
+                    },
+                    boxShadow: {
+                        'retro': '0 0 10px rgba(0, 255, 65, 0.5)',
+                        'retro-blue': '0 0 10px rgba(59, 130, 246, 0.5)',
+                        'retro-cyan': '0 0 10px rgba(0, 255, 255, 0.5)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts, Icons, and Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Corrected path to stylesheet -->
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm sticky top-0 z-50 transition-colors duration-300 border-b-2 border-retro-cyan dark:border-retro-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold font-serif text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 dark:from-retro-cyan dark:to-retro-green">Owen Akers</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="hidden md:flex space-x-8 items-center">
+                        <a href="/#home" class="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300">Home</a>
+                        <a href="/#about" class="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300">Journey</a>
+                        <a href="/#projects" class="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300">Projects</a>
+                        <a href="/#contact" class="bg-primary dark:bg-primary-dark text-white px-6 py-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-300">Contact</a>
+                    </div>
+                    <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-full focus:outline-none">
+                        <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden text-gray-800 dark:text-gray-200" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden text-gray-800 dark:text-gray-200" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-button" aria-label="Open menu" class="md:hidden p-2 rounded-md focus:outline-none">
+                        <svg class="w-6 h-6 text-gray-500 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4 px-4 dark:bg-gray-800">
+            <div class="flex flex-col space-y-3">
+                <a href="/#home" class="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 px-3 py-2 rounded-md">Home</a>
+                <a href="/#about" class="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 px-3 py-2 rounded-md">Journey</a>
+                <a href="/#projects" class="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 px-3 py-2 rounded-md">Projects</a>
+                <a href="/#contact" class="bg-primary dark:bg-primary-dark text-white px-6 py-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-300 text-center">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <a href="/" class="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-retro-cyan dark:hover:text-retro-green mb-8 group font-mono">
+                <svg class="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                <span class="text-retro-cyan">$</span> cd ..
+            </a>
+
+            <header class="mb-12" data-aos="fade-up">
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-gray-900 dark:text-white mb-2">
+                    <span class="text-retro-amber font-mono">{'>'}</span> Undergraduate Researcher
+                </h1>
+                <p class="mt-2 text-xl text-gray-600 dark:text-gray-300 font-mono">
+                    <span class="text-retro-green">@</span> SCAI Research Lab | Johns Hopkins
+                </p>
+                <div class="mt-4 h-1 w-32 bg-gradient-to-r from-retro-amber to-retro-cyan rounded"></div>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
+
+                <aside class="lg:col-span-1 lg:sticky lg:top-28 h-fit mb-12 lg:mb-0">
+                    <div class="space-y-6 bg-gray-50 dark:bg-gray-800 p-6 rounded border-2 border-retro-amber dark:border-retro-cyan shadow-retro" data-aos="fade-right">
+                        <div>
+                            <h3 class="text-sm font-semibold text-retro-amber dark:text-retro-cyan uppercase tracking-wider font-mono">$ echo $ROLE</h3>
+                            <p class="text-lg text-gray-800 dark:text-gray-200 font-mono">{'>'} Undergraduate Researcher</p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-retro-amber dark:text-retro-cyan uppercase tracking-wider font-mono">$ date --start</h3>
+                            <p class="text-lg text-gray-800 dark:text-gray-200 font-mono">{'>'} September 2025</p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-retro-amber dark:text-retro-cyan uppercase tracking-wider font-mono">$ ls research_areas/</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs font-medium text-gray-800 dark:text-gray-200 font-mono border border-retro-amber">Machine Learning</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs font-medium text-gray-800 dark:text-gray-200 font-mono border border-retro-amber">Artificial Intelligence</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs font-medium text-gray-800 dark:text-gray-200 font-mono border border-retro-amber">Computer Vision</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs font-medium text-gray-800 dark:text-gray-200 font-mono border border-retro-amber">Deep Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="lg:col-span-2 space-y-12">
+                    <div class="space-y-12">
+                        <div>
+                            <h2 class="text-2xl font-bold font-serif text-gray-900 dark:text-white mb-4">Research Overview</h2>
+                            <blockquote class="border-l-4 border-primary dark:border-primary-dark bg-gray-50 dark:bg-gray-800/50 p-6 rounded-r-lg">
+                                <p class="text-lg text-gray-700 dark:text-gray-300 italic">
+                                    As an undergraduate researcher at the SCAI (Systems, Cognition, and AI) Lab at Johns Hopkins University, I contribute to cutting-edge
+                                    research in artificial intelligence and machine learning. The lab focuses on developing novel approaches to complex AI challenges,
+                                    bridging the gap between theoretical research and practical applications. Working alongside graduate students and faculty, I gain hands-on
+                                    experience with state-of-the-art techniques while contributing to publications and advancing the field.
+                                </p>
+                            </blockquote>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-bold font-serif text-gray-900 dark:text-white mb-6">Key Focus Areas</h2>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="flex-shrink-0 w-10 h-10 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-brain text-blue-600 dark:text-blue-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-gray-200">Artificial Intelligence Research</h4>
+                                        <p class="text-gray-600 dark:text-gray-400">Contributing to research projects exploring novel AI architectures, optimization techniques, and applications of machine learning to real-world problems.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="flex-shrink-0 w-10 h-10 bg-teal-100 dark:bg-teal-900/50 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-code text-teal-600 dark:text-teal-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-gray-200">Algorithm Development</h4>
+                                        <p class="text-gray-600 dark:text-gray-400">Implementing and testing new algorithms, conducting experiments, and analyzing results to advance understanding in AI and machine learning domains.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="flex-shrink-0 w-10 h-10 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-users text-purple-600 dark:text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-gray-200">Collaborative Research</h4>
+                                        <p class="text-gray-600 dark:text-gray-400">Working closely with PhD students and faculty members, participating in lab meetings, presenting findings, and contributing to research publications and conference submissions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold font-serif text-gray-900 dark:text-white mb-4">About SCAI Lab</h2>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            The SCAI Lab at Johns Hopkins University is dedicated to advancing the frontiers of artificial intelligence, machine learning,
+                            and cognitive systems. The lab brings together researchers from diverse backgrounds to tackle fundamental questions in AI while
+                            developing practical solutions that can impact society.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            As an undergraduate researcher, I have the unique opportunity to work on projects that push the boundaries of current AI capabilities,
+                            gain mentorship from leading experts in the field, and develop the research skills necessary for a career in academia or industry.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t-2 border-retro-cyan dark:border-retro-green py-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="/" class="text-xl font-bold text-gray-900 dark:text-white font-serif">Owen Akers</a>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Computer Science & Computer Engineering</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/owenakers" target="_blank" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
+                        <span class="sr-only">GitHub</span>
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/owen-akers" target="_blank" class="text-gray-400 hover:text-retro-cyan dark:hover:text-retro-cyan transition-colors duration-300">
+                        <span class="sr-only">LinkedIn</span>
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:owenakers10@gmail.com" class="text-gray-400 hover:text-retro-amber dark:hover:text-retro-amber transition-colors duration-300">
+                        <span class="sr-only">Email</span>
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+                &copy; <span id="year"></span> Owen Akers. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+
+        // Dark mode toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Show the appropriate icon based on current theme
+        if (localStorage.getItem('color-theme') === 'light') {
+            themeToggleDarkIcon.classList.remove('hidden');
+        } else {
+            themeToggleLightIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
