@@ -32,7 +32,7 @@ const About = () => {
           <div className="space-y-12">
 
             {/* Item 1: Johns Hopkins - August 2024 - CLICKABLE */}
-            <a href="/experiences/hopkins.html" className="relative group block" data-aos="fade-up">
+            <a href="experiences/hopkins.html" className="relative group block" data-aos="fade-up">
               <div className="flex items-center mb-4">
                 {/* Dot - Pulsing for clickable */}
                 <div className="absolute left-8 md:left-1/2 w-4 h-4 -ml-2 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900 shadow-retro-blue z-10 group-hover:scale-150 transition-transform duration-300"></div>
@@ -68,7 +68,7 @@ const About = () => {
             </a>
 
             {/* Item 2: Cyberbirds - January 2025 - CLICKABLE */}
-            <a href="/experiences/cyberbirds.html" className="relative group block" data-aos="fade-up" data-aos-delay="200">
+            <a href="experiences/cyberbirds.html" className="relative group block" data-aos="fade-up" data-aos-delay="200">
               <div className="flex items-center mb-4">
                 {/* Dot - Pulsing for clickable */}
                 <div className="absolute left-8 md:left-1/2 w-4 h-4 -ml-2 rounded-full bg-secondary border-4 border-white dark:border-gray-900 shadow-retro z-10 group-hover:scale-150 transition-transform duration-300"></div>
@@ -104,7 +104,7 @@ const About = () => {
             </a>
 
             {/* Item 3: Lowe's - Summer 2025 - CLICKABLE */}
-            <a href="/experiences/lowes.html" className="relative group block" data-aos="fade-up" data-aos-delay="200">
+            <a href="experiences/lowes.html" className="relative group block" data-aos="fade-up" data-aos-delay="200">
               <div className="flex items-center mb-4">
                 {/* Dot - Pulsing for clickable */}
                 <div className="absolute left-8 md:left-1/2 w-4 h-4 -ml-2 rounded-full bg-blue-600 border-4 border-white dark:border-gray-900 shadow-retro-blue z-10 group-hover:scale-150 transition-transform duration-300"></div>
@@ -140,7 +140,7 @@ const About = () => {
             </a>
 
             {/* Item 4: SCAI Research Lab - September 2025 (MOST RECENT - AT BOTTOM) - CLICKABLE */}
-            <a href="/experiences/scai.html" className="relative group block" data-aos="fade-up" data-aos-delay="300">
+            <a href="experiences/scai.html" className="relative group block" data-aos="fade-up" data-aos-delay="300">
               <div className="flex items-center mb-4">
                 {/* Dot - Pulsing for clickable */}
                 <div className="absolute left-8 md:left-1/2 w-4 h-4 -ml-2 rounded-full bg-teal-500 border-4 border-white dark:border-gray-900 shadow-retro z-10 group-hover:scale-150 transition-transform duration-300"></div>
