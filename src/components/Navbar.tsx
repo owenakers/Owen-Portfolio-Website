@@ -17,11 +17,11 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
+    <nav className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm sticky top-0 z-50 transition-colors duration-300 border-b-2 border-retro-cyan dark:border-retro-green">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center">
-            <span className="text-2xl font-bold font-serif text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 dark:from-blue-500 dark:to-teal-400">
+            <span className="text-2xl font-bold font-serif text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 dark:from-retro-cyan dark:to-retro-green">
               Owen Akers
             </span>
           </div>
@@ -29,19 +29,19 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
             <div className="hidden md:flex space-x-8 items-center">
               <a
                 href="#"
-                className="text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors duration-300"
+                className="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 font-mono"
               >
                 Home
               </a>
               <a
                 href="#about"
-                className="text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors duration-300"
+                className="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 font-mono"
               >
                 Journey
               </a>
               <a
                 href="#projects"
-                className="text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors duration-300"
+                className="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 font-mono"
               >
                 Projects
               </a>
@@ -96,27 +96,27 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
       <div
         className={`${
           isMobileMenuOpen ? 'block' : 'hidden'
-        } md:hidden pb-4 px-4 dark:bg-gray-800`}
+        } md:hidden pb-4 px-4 dark:bg-gray-800/80 backdrop-blur-sm`}
       >
         <div className="flex flex-col space-y-3">
           <a
             href="#"
             onClick={closeMobileMenu}
-            className="text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors duration-300 px-3 py-2 rounded-md"
+            className="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 px-3 py-2 rounded-md font-mono"
           >
             Home
           </a>
           <a
             href="#about"
             onClick={closeMobileMenu}
-            className="text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors duration-300 px-3 py-2 rounded-md"
+            className="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 px-3 py-2 rounded-md font-mono"
           >
-            About
+            Journey
           </a>
           <a
             href="#projects"
             onClick={closeMobileMenu}
-            className="text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors duration-300 px-3 py-2 rounded-md"
+            className="text-gray-500 dark:text-gray-300 hover:text-retro-cyan transition-colors duration-300 px-3 py-2 rounded-md font-mono"
           >
             Projects
           </a>
